@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -61,7 +62,10 @@ public class Main {
 
     private static Shape makeShape(){
         System.out.println("Please choose a shape type:");
-        System.out.println(String.join("\n",ShapeFactory.getShapes()));
+        System.out.println(
+                ShapeFactory.getShapes().stream()
+                        .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
+                        .collect(Collectors.joining("\n")));
 
         Scanner reader = new Scanner(System.in);
         String shapeType = null;

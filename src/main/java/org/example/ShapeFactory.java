@@ -16,7 +16,7 @@ public class ShapeFactory {
             "semicircle", new String[]{"diameter"});
 
     public static Shape getShape(String type, double[] sideValues) {
-        return switch (type) {
+        return switch (type.toLowerCase()) {
             case "rectangle" -> new Rectangle(sideValues);
             case "triangle" -> new Triangle(sideValues);
             case "oval" -> new Oval(sideValues);
