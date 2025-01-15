@@ -22,7 +22,7 @@ public class Main {
                     3. Finish""");
             Scanner reader = new Scanner(System.in);
 
-            int selection = 0;
+            int selection;
             while (true) {
                 try {
                     selection = Integer.parseInt(reader.next());

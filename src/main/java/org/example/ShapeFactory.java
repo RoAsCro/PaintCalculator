@@ -29,6 +29,4 @@ public class ShapeFactory {
     public static String[] getSides(String shape) {
         return SHAPE_SIDES.getOrDefault(shape.toLowerCase(), null);
     }
-
-
 }
