@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Room room = new Room();
-        paintMenu(room);
-        areaMenu(room);
+        Job job = new Job();
+        paintMenu(job);
+        areaMenu(job);
         System.out.println("Your total area is :");
-        System.out.println(room.getTotalArea());
+        System.out.println(job.getTotalArea());
     }
 
-    private static void areaMenu(Room room) {
+    private static void areaMenu(Job job) {
         boolean go = true;
         while (go) {
             System.out.println("Please select what you would like to do:");
@@ -28,10 +28,10 @@ public class Main {
                     selection = Integer.parseInt(reader.next());
                     switch (selection) {
                         case 1:
-                            room.addArea(makeShape());
+                            job.addArea(makeShape());
                             break;
                         case 2:
-                            room.addExclusion(makeShape());
+                            job.addExclusion(makeShape());
                             break;
                         case 3:
                             go = false;
@@ -48,14 +48,14 @@ public class Main {
         }
     }
 
-    private static void paintMenu(Room room) {
+    private static void paintMenu(Job job) {
         System.out.println("Please enter the coverage of your paint as square meters per litre.");
         double squareMeters = positiveDoubleParser("Please enter the square meters:");
         System.out.println();
         double litres = positiveDoubleParser("per how many litres:");
-        room.setCoverage(squareMeters / litres);
+        job.setCoverage(squareMeters / litres);
         double cost = positiveDoubleParser("Please enter the cost of the paint:");
-        room.setPaintCost(cost);
+        job.setPaintCost(cost);
     }
 
     private static Shape makeShape(){

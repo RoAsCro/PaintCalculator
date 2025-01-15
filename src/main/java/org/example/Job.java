@@ -3,11 +3,12 @@ package org.example;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Room {
+public class Job {
     private final List<Shape> areasToPaint = new LinkedList<>();
     private final List<Shape> areasToExclude = new LinkedList<>();
     private double coverage = 0;
     private double paintCost = 0;
+    private double litresPerCan = 0;
 
     public List<Shape> getAreasToPaint() {
         return this.areasToPaint;
@@ -49,6 +50,10 @@ public class Room {
     public double getPaintCost() {
         return paintCost;
     }
+
+//    public double litresPerCan() {
+//
+//    }
 
     public void setPaintCost(double paintCost) {
         this.paintCost = paintCost;
