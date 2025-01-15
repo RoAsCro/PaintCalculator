@@ -16,9 +16,10 @@ public class Main {
         while (go) {
             System.out.println("Please select what you would like to do:");
             System.out.println(
-                    "1. Add an area to paint\n" +
-                    "2. Add an area to exclude from painting\n" +
-                    "3. Finish");
+                    """
+                    1. Add an area to paint
+                    2. Add an area to exclude from painting
+                    3. Finish""");
             Scanner reader = new Scanner(System.in);
 
             int selection = 0;
