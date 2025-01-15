@@ -7,7 +7,7 @@ public class Main {
         Job job = new Job();
         paintMenu(job);
         areaMenu(job);
-        System.out.println("Your total area is :");
+        System.out.print("Your total area is: ");
         System.out.println(job.getTotalArea());
     }
 
@@ -54,8 +54,10 @@ public class Main {
         System.out.println();
         double litres = positiveDoubleParser("per how many litres:");
         job.setCoverage(squareMeters / litres);
-        double cost = positiveDoubleParser("Please enter the cost of the paint:");
+        double cost = positiveDoubleParser("Please enter the cost per can of paint:");
         job.setPaintCost(cost);
+        double litresPerCan = positiveDoubleParser("Please enter the number of litres in a can:");
+        job.setLitresPerCan(litresPerCan);
     }
 
     private static Shape makeShape(){

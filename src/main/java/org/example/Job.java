@@ -62,4 +62,16 @@ public class Job {
     public void setLitresPerCan(double litresPerCan) {
         this.litresPerCan = litresPerCan;
     }
+
+    @Override
+    public String toString(){
+        double totalArea = getTotalArea();
+        double cansAsDecimal = totalArea / this.litresPerCan;
+        long cansTotal = Math.round(cansAsDecimal) + 1;
+        double cost = Math.round(cansTotal * this.paintCost * 100) / 100d;
+        return "The total area to be painted is: " + totalArea + "\n" +
+                "This will take " + cansAsDecimal + " cans, " +
+                "requiring a total of " + cansTotal + " cans.\n" +
+                "This will cost £" + cost + ".";
+    }
 }
