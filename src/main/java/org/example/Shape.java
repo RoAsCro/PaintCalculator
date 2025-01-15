@@ -8,6 +8,6 @@ public abstract class Shape {
     }
 
     public double getArea() {
-        return this.area;
+        return Math.round(area * 100) / 100d;
     };
 }

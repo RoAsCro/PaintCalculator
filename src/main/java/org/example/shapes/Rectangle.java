@@ -1,4 +1,6 @@
-package org.example;
+package org.example.shapes;
+
+import org.example.Shape;
 
 public class Rectangle extends Shape {
     private double length = 0;
