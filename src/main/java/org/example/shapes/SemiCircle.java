@@ -7,6 +7,6 @@ public class SemiCircle extends Shape {
     public SemiCircle(double[] sides) {
         super(sides);
         this.diameter = sides[0];
-        this.area = Math.pow(Math.PI * (this.diameter / 2d), 2d);
+        this.area = Math.pow(Math.PI * (this.diameter / 2d), 2d) / 2;
     }
 }
