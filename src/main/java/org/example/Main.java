@@ -7,8 +7,7 @@ public class Main {
         Job job = new Job();
         paintMenu(job);
         areaMenu(job);
-        System.out.print("Your total area is: ");
-        System.out.println(job.getTotalArea());
+        System.out.print(job);
     }
 
     private static void areaMenu(Job job) {
