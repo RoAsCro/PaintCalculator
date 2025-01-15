@@ -20,6 +20,7 @@ public class Main {
                     1. Add an area to paint
                     2. Add an area to exclude from painting
                     3. Finish""");
+
             Scanner reader = new Scanner(System.in);
 
             int selection;
@@ -68,7 +69,7 @@ public class Main {
         job.setCoverage(squareMeters / litres);
         System.out.println();
 
-        double cost = positiveDoubleParser("Please enter the cost per can of paint:");
+        double cost = positiveDoubleParser("Please enter the cost per can of paint in pounds:");
         job.setPaintCost(cost);
         System.out.println();
 
