@@ -25,13 +25,24 @@ public class Main {
             int selection;
             while (true) {
                 try {
+                    Shape shape;
                     selection = Integer.parseInt(reader.next());
                     switch (selection) {
                         case 1:
-                            job.addArea(makeShape());
+                            System.out.println("Adding area to paint...");
+                            shape = makeShape();
+                            if (shape == null) {
+                                break;
+                            }
+                            job.addArea(shape);
                             break;
                         case 2:
-                            job.addExclusion(makeShape());
+                            System.out.println("Adding area to exclude...");
+                            shape = makeShape();
+                            if (shape == null) {
+                                break;
+                            }
+                            job.addExclusion(shape);
                             break;
                         case 3:
                             go = false;
@@ -52,16 +63,23 @@ public class Main {
         System.out.println("Please enter the coverage of your paint as square meters per litre.");
         double squareMeters = positiveDoubleParser("Please enter the square meters:");
         System.out.println();
+
         double litres = positiveDoubleParser("per how many litres:");
         job.setCoverage(squareMeters / litres);
+        System.out.println();
+
         double cost = positiveDoubleParser("Please enter the cost per can of paint:");
         job.setPaintCost(cost);
+        System.out.println();
+
         double litresPerCan = positiveDoubleParser("Please enter the number of litres in a can:");
         job.setLitresPerCan(litresPerCan);
+        System.out.println();
+
     }
 
     private static Shape makeShape(){
-        System.out.println("Please choose a shape type:");
+        System.out.println("Please choose a shape type or enter '0' to go back:");
         System.out.println(
                 ShapeFactory.getShapes().stream()
                         .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1))
@@ -72,6 +90,9 @@ public class Main {
         String[] sides = null;
         while (sides == null) {
             shapeType = reader.next();
+            if (shapeType.equals("0")) {
+                return null;
+            }
             sides = ShapeFactory.getSides(shapeType);
             if (sides == null) {
                 System.out.println("Not a valid shape type.");
@@ -101,7 +122,10 @@ public class Main {
                 if (value <= 0) {
                     throw new NumberFormatException();
                 }
-                go = false;
+                System.out.println("Is this correct: " + value);
+                System.out.println("Y/N");
+                String confirm = reader.next();
+                go = !confirm.equalsIgnoreCase("y");
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a positive number.");
             }

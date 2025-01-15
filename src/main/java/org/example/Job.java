@@ -66,7 +66,9 @@ public class Job {
     @Override
     public String toString(){
         double totalArea = getTotalArea();
-        double cansAsDecimal = Math.round((totalArea / coverage) / this.litresPerCan * 100) / 100d;
+        double cansAsDecimal = totalArea <= 0
+                ? 0
+                : Math.round((totalArea / coverage) / this.litresPerCan * 100) / 100d;
         long cansTotal = (long) Math.ceil(cansAsDecimal);
         double cost = Math.round(cansTotal * this.paintCost * 100) / 100d;
         return "The total area to be painted is: " + totalArea + "\n" +
