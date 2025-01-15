@@ -122,10 +122,17 @@ public class Main {
                 if (value <= 0) {
                     throw new NumberFormatException();
                 }
-                System.out.println("Is this correct: " + value);
-                System.out.println("Y/N");
-                String confirm = reader.next();
-                go = !confirm.equalsIgnoreCase("y");
+                while (true) {
+                    System.out.println("Is this correct: " + value);
+                    System.out.println("Y/N");
+                    String confirm = reader.next();
+                    if (confirm.equalsIgnoreCase("y")){
+                        go = false;
+                        break;
+                    } else if (confirm.equalsIgnoreCase("n")){
+                        break;
+                    }
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a positive number.");
             }
