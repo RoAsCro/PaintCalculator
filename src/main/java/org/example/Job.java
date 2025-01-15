@@ -51,11 +51,15 @@ public class Job {
         return paintCost;
     }
 
-//    public double litresPerCan() {
-//
-//    }
-
     public void setPaintCost(double paintCost) {
         this.paintCost = paintCost;
+    }
+
+    public double getLitresPerCan() {
+        return litresPerCan;
+    }
+
+    public void setLitresPerCan(double litresPerCan) {
+        this.litresPerCan = litresPerCan;
     }
 }
