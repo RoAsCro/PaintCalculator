@@ -69,7 +69,7 @@ public class Main {
         job.setCoverage(squareMeters / litres);
         System.out.println();
 
-        double cost = positiveDoubleParser("Please enter the cost per can of paint in pounds:");
+        double cost = positiveDoubleParser("Please enter the cost per can of your paint in pounds:");
         job.setPaintCost(cost);
         System.out.println();
 
