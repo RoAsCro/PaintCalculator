@@ -71,7 +71,7 @@ public class Job {
                 : Math.round((totalArea / coverage) / this.litresPerCan * 100) / 100d;
         long cansTotal = (long) Math.ceil(cansAsDecimal);
         double cost = Math.round(cansTotal * this.paintCost * 100) / 100d;
-        return "The total area to be painted is: " + totalArea + "\n" +
+        return "The total area to be painted is: " + totalArea + " meters squared.\n" +
                 "This will take " + cansAsDecimal + " cans, " +
                 "requiring a total of " + cansTotal + " cans.\n" +
                 "This will cost £" + cost + ".";

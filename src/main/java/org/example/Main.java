@@ -106,7 +106,8 @@ public class Main {
             double sideValue = positiveDoubleParser("Please enter the " +
                     sides[i] +
                     " of the " +
-                    shapeType);
+                    shapeType +
+                    " in meters.");
                 sideValues[i] = sideValue;
         }
         return ShapeFactory.getShape(shapeType, sideValues);
